@@ -2,10 +2,11 @@
 
 import re
 
-def main():
+all_data = ['22050', '33075', '38588', '44100', '49613', '55125', '66150']
+ipm_quad_data = ['22050', '33075', '38588']
+nums_pots_and_cons = ['130080', '194408', '224938', '260970', '292692', '326626', '397488']
 
-	all_data = ['22050', '33075', '38588', '44100', '49613', '55125', '66150']
-	ipm_quad_data = ['22050', '33075', '38588']
+def main():
 
 	# Parses results
 	results = {}
@@ -24,7 +25,7 @@ def main():
 			results[key] = parseFile(key)
 
 	# Writes out results
-	print " , Time 1, Time 2, Time 3, , Objective 1, Objective 2, Objective 3, , Infeasibility 1, Infeasibility 2, Infeasibility 3"
+	print " , Num. Potentials and Constraints, , Time 1, Time 2, Time 3, , Objective 1, Objective 2, Objective 3, , Infeasibility 1, Infeasibility 2, Infeasibility 3"
 
 	print "ADMM - Linear"
 	for data in all_data:
@@ -85,11 +86,12 @@ def printLine(results, key):
 	times = []
 	objs = []
 	infs = []
+	size = nums_pots_and_cons[all_data.index(key.split('-')[1])]
 	for i in range(1,4):
 		times.append(str(results[key+'-'+str(i)].time))
 		objs.append(str(results[key+'-'+str(i)].objective))
 		infs.append(str(results[key+'-'+str(i)].infeasibility))
-	print ", " + ", ".join(times) + ", , " + ", ".join(objs) + ", , " + ", ".join(infs)
+	print ", " + size + ", , " + ", ".join(times) + ", , " + ", ".join(objs) + ", , " + ", ".join(infs)
 
 class runResult:
 	time = None
