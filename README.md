@@ -29,7 +29,7 @@ add-on for PSL. Please follow the [instructions](https://github.com/linqs/psl/wi
 
 PSL Library
 -----------
-The algorithms for this experiment is implemented in the PSL library,
+The algorithms for this experiment are implemented in the PSL library,
 [version 1.2](https://github.com/linqs/psl/tree/1.2). It will be downloaded
 by Maven automatically.
 
