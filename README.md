@@ -6,7 +6,7 @@ Code for comparing ADMM and an interior-point method, as presented in
 and my Ph.D. dissertation. It also contains the data and setup for the paper
 [Scaling MPE Inference for Constrained Continuous Markov Random Fields with Consensus Optimization](http://stephenbach.net/files/bach-nips12.pdf),
 but this code tests the improved version of the inference algorithm for
-piecewise-quadratic problem.
+piecewise-quadratic problems.
 
 Please cite this work as
 
